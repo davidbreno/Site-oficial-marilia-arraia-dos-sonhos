@@ -129,11 +129,10 @@ a {
 .card-banner::after {
   content: "";
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(980px, calc(100% - 2rem));
+  left: 0;
+  right: 0;
   height: 1.2px;
-  top: calc(100% + 0.6rem);
+  top: calc(100% + 2.4rem);
   background: linear-gradient(90deg,
     rgba(255, 255, 255, 0) 0%,
     #f7c0d5 18%,
