@@ -81,11 +81,11 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  min-height: 128px;
-  background-image: url('img/barratop.png');
-  background-size: 100% auto;
+  min-height: 198px;
+  background-image: url('img/barrafinalizada2222.png');
+  background-size: calc(100% - 1cm) auto;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: top 0.5cm center;
 }
 
 
