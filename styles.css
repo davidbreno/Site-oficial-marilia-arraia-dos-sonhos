@@ -26,7 +26,7 @@ body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   color: var(--ink);
-  background: var(--bg);
+  background-color: var(--bg);
   position: relative;
   isolation: isolate;
 }
@@ -37,12 +37,12 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.2;
-  background-image:
-    linear-gradient(45deg, rgba(45, 31, 43, 0.12) 25%, transparent 25%, transparent 75%, rgba(45, 31, 43, 0.12) 75%, rgba(45, 31, 43, 0.12)),
-    linear-gradient(45deg, rgba(45, 31, 43, 0.12) 25%, transparent 25%, transparent 75%, rgba(45, 31, 43, 0.12) 75%, rgba(45, 31, 43, 0.12));
-  background-position: 0 0, 14px 14px;
-  background-size: 28px 28px;
+  opacity: 0.5;
+  background-image: url('img/PADRAOXADRES.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center center;
+  filter: blur(3px);
 }
 
 @font-face {
@@ -78,8 +78,7 @@ a {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 50;
   min-height: 198px;
   background-image: url('img/barrafinalizada2222.png');
@@ -88,12 +87,87 @@ a {
   background-position: top 0.5cm center;
 }
 
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 11px;
+  height: 1.5px;
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #f7c0d5 18%,
+    #d85c8c 38%,
+    #ffd8e6 50%,
+    #d85c8c 62%,
+    #f7c0d5 82%,
+    rgba(255, 255, 255, 0) 100%);
+  background-size: 220% 100%;
+  box-shadow: 0 0 5px rgba(216, 92, 140, 0.3);
+  animation: rose-shine 4.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rose-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
+
+.card-banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+  max-width: 100%;
+}
+
+.card-banner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(980px, calc(100% - 2rem));
+  height: 1.2px;
+  top: calc(100% + 0.6rem);
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #f7c0d5 18%,
+    #d85c8c 38%,
+    #ffd8e6 50%,
+    #d85c8c 62%,
+    #f7c0d5 82%,
+    rgba(255, 255, 255, 0) 100%);
+  background-size: 220% 100%;
+  box-shadow: 0 0 5px rgba(216, 92, 140, 0.3);
+  animation: rose-shine 4.5s linear infinite;
+  pointer-events: none;
+}
+
+.card-banner img {
+  max-width: min(1100px, 100%);
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-banner img:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
+}
+
 
 
 .nav-shell {
-  width: min(1520px, calc(100% - 16px));
-  min-height: 64px;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,16 +193,22 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
-  color: #2d1f2b;
+  color: white;
   font-family: "Relicta-Light", serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   justify-self: center;
+}
+
+.nav-links a {
+  transition: color 0.25s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 .nav-links a:hover {
   color: var(--pink);
+  transform: translateY(-2px);
 }
 
 .nav-actions {
@@ -364,15 +444,24 @@ main {
 
 .section-head h2 {
   font-size: clamp(2rem, 3vw, 3rem);
+  color: #ad3060;
 }
 
 .steps .section-head {
   margin-bottom: 30px;
 }
 
+.steps {
+  min-height: 420px;
+}
+
+.steps > * {
+  display: none !important;
+}
+
 .steps .section-head h2 {
   margin: 0 auto;
-  color: #e97aa8;
+  color: #ad3060;
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(2.6rem, 4vw, 4.2rem);
   line-height: 1;
@@ -491,6 +580,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
+  min-height: 248px;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -498,8 +588,7 @@ main {
 }
 
 .steps-list article {
-  padding: 16px 10px;
-  text-align: center;
+  display: none;
 }
 
 .steps-list strong {
@@ -564,7 +653,7 @@ main {
 
 .about-text h2 {
   margin-bottom: 18px;
-  color: #e97aa8;
+  color: #ad3060;
   font-family: "josephsophia", cursive;
   font-size: clamp(3.2rem, 5vw, 5rem);
   line-height: 0.9;
