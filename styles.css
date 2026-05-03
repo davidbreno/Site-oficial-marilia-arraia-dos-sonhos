@@ -433,6 +433,10 @@ main {
   position: relative;
 }
 
+.products {
+  padding-top: 18px;
+}
+
 .section-head {
   display: flex;
   align-items: center;
@@ -446,26 +450,6 @@ main {
   color: #ad3060;
 }
 
-.steps .section-head {
-  margin-bottom: 30px;
-}
-
-.steps {
-  min-height: 420px;
-}
-
-.steps > * {
-  display: none !important;
-}
-
-.steps .section-head h2 {
-  margin: 0 auto;
-  color: #ad3060;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2.6rem, 4vw, 4.2rem);
-  line-height: 1;
-  text-align: center;
-}
 
 .section-actions {
   display: flex;
