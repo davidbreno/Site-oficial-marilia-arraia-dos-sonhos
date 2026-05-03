@@ -81,53 +81,21 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  min-height: 128px;
-  background: linear-gradient(180deg, #fff8f1 0%, #fbf0e7 100%);
-  border-bottom: 1px solid rgba(45, 31, 43, 0.08);
-  box-shadow: 0 10px 22px rgba(47, 29, 47, 0.1);
-  overflow: hidden;
+  min-height: 64px;
 }
 
-.site-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: linear-gradient(90deg,
-    rgba(255, 255, 255, 0) 0%,
-    #f7c0d5 18%,
-    #d85c8c 38%,
-    #ffd8e6 50%,
-    #d85c8c 62%,
-    #f7c0d5 82%,
-    rgba(255, 255, 255, 0) 100%);
-  background-size: 220% 100%;
-  box-shadow: 0 0 10px rgba(216, 92, 140, 0.45);
-  animation: rose-shine 4.5s linear infinite;
-  pointer-events: none;
-}
+
 
 .nav-shell {
   width: min(1520px, calc(100% - 16px));
-  min-height: 128px;
+  min-height: 64px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) auto minmax(0, 1.2fr);
+  display: flex;
   align-items: center;
-  gap: 32px;
-  transform: translateX(96px);
+  justify-content: center;
 }
 
-@keyframes rose-shine {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 220% 50%;
-  }
-}
+
 
 .brand {
   display: inline-flex;
