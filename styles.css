@@ -1271,3 +1271,107 @@ main {
   .whatsapp-float { right: 10px !important; bottom: 10px !important; width: 48px !important; height: 48px !important; }
   .whatsapp-icon { width: 48px !important; height: 48px !important; }
 }
+
+/* =========================
+   CSS MOBILE DEFINITIVO – Colar no final do seu styles.css
+   ========================= */
+@media (max-width: 640px) {
+
+  /* Hero */
+  .hero {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 14px 12px 20px !important;
+    margin: 0 auto 12px !important;
+    width: calc(100% - 12px) !important;
+  }
+  .hero-copy { max-width: 100% !important; text-align: center !important; }
+  .hero-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 320px;
+    margin: 0 auto !important;
+  }
+  .button { width: 100% !important; }
+
+  /* Mostrar todas as imagens hero, banners e cards */
+  .hero .minha-imagem,
+  .card-banner img,
+  .full-photo-banner img,
+  .product-card img,
+  .about-card img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
+
+  /* Containers permitem overflow */
+  .hero, .card-banner, .full-photo-banner, .product-grid, .testimonial-grid, .about, .steps-list {
+    overflow: visible !important;
+  }
+
+  /* Hero Points */
+  .hero-points {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin-top: 18px !important;
+  }
+  .hero-points div {
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(45,31,43,0.08) !important;
+    padding-bottom: 10px !important;
+  }
+  .hero-points div:last-child { border-bottom: 0 !important; }
+
+  /* Sobre */
+  .about-text {
+    min-height: auto !important;
+    padding: 25px 12px !important;
+    text-align: center !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    background-size: contain !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+  .about-text h2 { font-size: 2rem !important; line-height: 1.1 !important; }
+  .about-text p { font-size: 0.95rem !important; margin: 12px auto !important; }
+
+  /* Footer */
+  .footer-main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    padding: 20px 10px !important;
+  }
+  .footer-column { width: 100% !important; margin-bottom: 12px !important; }
+  .footer-link { justify-content: center !important; font-size: 0.9rem !important; gap: 6px !important; }
+
+  /* Grids de produtos e depoimentos */
+  .product-grid, .testimonial-grid, .steps-list { grid-template-columns: 1fr !important; }
+
+  /* WhatsApp */
+  .whatsapp-float { right: 12px !important; bottom: 12px !important; width: 52px !important; height: 52px !important; }
+  .whatsapp-icon { width: 52px !important; height: 52px !important; }
+}
+
+@media (max-width: 420px) {
+  .nav-links { gap: 6px 8px !important; font-size: 0.72rem !important; color: #f7d9e6 !important; }
+  .hero h1 { font-size: 1.48rem !important; }
+  .hero p { font-size: 0.88rem !important; }
+  .button { min-height: 40px !important; padding-inline: 14px !important; }
+  .section-head h2 { font-size: 1.35rem !important; }
+  .about-text h2 { font-size: 2rem !important; }
+  .footer-main { width: calc(100% - 16px) !important; }
+  .whatsapp-float { right: 10px !important; bottom: 10px !important; width: 48px !important; height: 48px !important; }
+  .whatsapp-icon { width: 48px !important; height: 48px !important; }
+}
