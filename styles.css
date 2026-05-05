@@ -948,20 +948,27 @@ main {
   }
 
   .site-header {
-    min-height: 128px;
+    min-height: 106px;
     background-size: calc(100% - 8px) auto;
     background-position: top 4px center;
   }
 
+  .site-header::after {
+    bottom: 6px;
+  }
+
   .nav-shell {
-    width: calc(100% - 12px);
+    width: calc(100% - 20px);
     transform: translate(-50%, -50%);
   }
 
   .nav-links {
-    gap: 8px 10px;
-    font-size: 0.72rem;
+    gap: 8px 12px;
+    font-size: 0.8rem;
     line-height: 1.2;
+    font-weight: 500;
+    color: #f7d9e6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
   }
 
   .nav-icon {
@@ -970,8 +977,7 @@ main {
   }
 
   .card-banner {
-    margin: 0.75rem auto 1.25rem;
-    padding: 0;
+    display: none;
   }
 
   .card-banner img {
@@ -983,7 +989,7 @@ main {
 
   .hero {
     width: calc(100% - 12px);
-    margin: 0 auto;
+    margin: 0 auto 8px;
     padding: 14px 10px 16px;
     display: flex;
     flex-direction: column;
@@ -995,10 +1001,7 @@ main {
   }
 
   .hero .minha-imagem {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 18px;
-    order: -1;
+    display: none;
   }
 
   .hero-copy {
@@ -1072,7 +1075,7 @@ main {
 
   .full-photo-banner {
     width: calc(100% - 12px);
-    margin: 0 auto 22px;
+    margin: 0 auto 14px;
   }
 
   .full-photo-banner img {
@@ -1080,9 +1083,13 @@ main {
     clip-path: inset(0 round 16px);
   }
 
+  #inicio + .card-banner + main > .full-photo-banner {
+    display: none;
+  }
+
   .section {
     width: calc(100% - 12px);
-    padding-block: 28px;
+    padding-block: 20px;
   }
 
   .section-head {
@@ -1132,6 +1139,18 @@ main {
     text-align: center;
   }
 
+  .whatsapp-float {
+    right: 12px;
+    bottom: 12px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-icon {
+    width: 52px;
+    height: 52px;
+  }
+
   .footer-main {
     position: static;
     width: calc(100% - 28px);
@@ -1156,8 +1175,9 @@ main {
 
 @media (max-width: 420px) {
   .nav-links {
-    gap: 8px 10px;
-    font-size: 0.68rem;
+    gap: 6px 8px;
+    font-size: 0.72rem;
+    color: #f7d9e6;
   }
 
   .hero h1 {
@@ -1165,7 +1185,7 @@ main {
   }
 
   .hero p {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .button {
@@ -1184,4 +1204,17 @@ main {
   .footer-main {
     width: calc(100% - 16px);
   }
+
+  .whatsapp-float {
+    right: 10px;
+    bottom: 10px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .whatsapp-icon {
+    width: 48px;
+    height: 48px;
+  }
 }
+
