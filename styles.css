@@ -728,13 +728,17 @@ main {
 .about-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: auto;
   object-fit: contain;
   border-radius: 20px;
 }
 
 .about-text {
+  position: relative;
   padding: 12px 0;
+  color: var(--muted);
+  min-height: 700px; /* define altura mínima da div */
+  background: url('img/MAE.png') no-repeat center 55%; /* agora vai subir */
+  background-size: contain;
 }
 
 .about-text h2 {
