@@ -1173,205 +1173,192 @@ main {
 
 }
 
-/* =========================
-   MOBILE FIX FINAL – seguro para colar no final do CSS
-   ========================= */
+/* Mobile follows the desktop composition, only scaled to fit narrow screens. */
 @media (max-width: 640px) {
+  .site-header {
+    min-height: 124px;
+    background-size: calc(100% - 8px) auto;
+    background-position: top 4px center;
+  }
 
-  /* ====================
-     HEADER / MENU
-     ==================== */
   .nav-shell {
-    position: relative !important;
-    top: 16px !important;
-    left: 19px !important;
-    transform: none !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    padding: 0 12px !important;
-    z-index: 100 !important;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: calc(100% - 24px);
+    transform: translateX(-50%);
   }
+
   .nav-links {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 8px 10px !important;
-    font-size: 0.85rem !important;
-    margin: 0 auto !important;
-    color: #f7d9e6 !important;
+    gap: 8px 12px;
+    color: #fff;
+    font-size: 0.82rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
   }
-  .brand-logo { width: 108px !important; height: auto !important; }
-  .nav-actions { display: flex !important; gap: 10px !important; }
 
-  /* ====================
-     HERO / BOTÃO
-     ==================== */
+  .card-banner {
+    display: flex;
+    margin: 0.75rem auto 1.75rem;
+    padding: 0 8px;
+  }
+
+  .card-banner::after {
+    top: calc(100% + 1rem);
+  }
+
+  .card-banner img {
+    display: block;
+    max-width: 100%;
+    border-radius: 24px;
+    clip-path: inset(0 round 24px);
+  }
+
+  .full-photo-banner {
+    display: block;
+    width: calc(100% - 16px);
+    margin: 0 auto 28px;
+  }
+
+  .full-photo-banner img {
+    display: block;
+    border-radius: 22px;
+    clip-path: inset(0 round 22px);
+  }
+
+  #inicio + .card-banner + main > .full-photo-banner {
+    display: block;
+  }
+
   .hero {
-    flex-direction: column !important;
-    gap: 12px !important;
-    padding: 14px 10px 20px !important;
-    margin: 0 auto 12px !important;
-    width: calc(100% - 12px) !important;
+    width: calc(100% - 16px);
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    overflow: hidden;
+    transform: none;
   }
-  .hero .minha-imagem { display: none !important; }
-  .hero-copy { max-width: 100% !important; padding-top: 0 !important; text-align: center !important; }
-  .hero-actions { flex-direction: column !important; gap: 10px !important; width: 100% !important; max-width: 320px; margin: 0 auto !important; }
-  .button { width: 100% !important; }
 
-  /* ====================
-     HERO POINTS / ABOUT
-     ==================== */
-  .hero-points { grid-template-columns: 1fr !important; max-width: 100% !important; margin-top: 18px !important; }
-  .hero-points div { border-right: 0 !important; border-bottom: 1px solid rgba(45,31,43,0.08) !important; padding-bottom: 10px !important; }
-  .hero-points div:last-child { border-bottom: 0 !important; }
-
-  .about-text {
-    min-height: auto !important;
-    padding: 25px 12px !important;
-    background-size: contain !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-    text-align: center !important;
+  .hero .minha-imagem {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    order: 0;
   }
-  .about-text h2 { font-size: 2rem !important; line-height: 1.1 !important; }
-  .about-text p { font-size: 0.95rem !important; max-width: 90% !important; margin: 12px auto !important; }
 
-  /* ====================
-     FOOTER
-     ==================== */
-  .footer-main {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    gap: 12px !important;
-    padding: 20px 10px !important;
+  .hero-copy {
+    min-width: 0;
+    max-width: 100%;
+    padding-top: 0;
+    text-align: left;
+    align-items: flex-start;
   }
-  .footer-column { width: 100% !important; margin-bottom: 12px !important; }
-  .footer-link { justify-content: center !important; font-size: 0.9rem !important; gap: 6px !important; }
 
-  /* ====================
-     WHATSAPP
-     ==================== */
-  .whatsapp-float { right: 12px !important; bottom: 12px !important; width: 52px !important; height: 52px !important; }
-  .whatsapp-icon { width: 52px !important; height: 52px !important; }
-}
-
-@media (max-width: 420px) {
-  .nav-links { gap: 6px 8px !important; font-size: 0.72rem !important; color: #f7d9e6 !important; }
-  .hero h1 { font-size: 1.48rem !important; }
-  .hero p { font-size: 0.88rem !important; }
-  .button { min-height: 40px !important; padding-inline: 14px !important; }
-  .section-head h2 { font-size: 1.35rem !important; }
-  .about-text h2 { font-size: 2rem !important; }
-  .footer-main { width: calc(100% - 16px) !important; }
-  .whatsapp-float { right: 10px !important; bottom: 10px !important; width: 48px !important; height: 48px !important; }
-  .whatsapp-icon { width: 48px !important; height: 48px !important; }
-}
-
-/* =========================
-   CSS MOBILE DEFINITIVO – Colar no final do seu styles.css
-   ========================= */
-@media (max-width: 640px) {
-
-  /* Hero */
-  .hero {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 16px !important;
-    padding: 14px 12px 20px !important;
-    margin: 0 auto 12px !important;
-    width: calc(100% - 12px) !important;
+  .hero h1 {
+    font-size: 2rem;
   }
-  .hero-copy { max-width: 100% !important; text-align: center !important; }
+
+  .hero p {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
   .hero-actions {
-    flex-direction: column !important;
-    gap: 12px !important;
-    width: 100% !important;
-    max-width: 320px;
-    margin: 0 auto !important;
-  }
-  .button { width: 100% !important; }
-
-  /* Mostrar todas as imagens hero, banners e cards */
-  .hero .minha-imagem,
-  .card-banner img,
-  .full-photo-banner img,
-  .product-card img,
-  .about-card img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    margin: 0 auto !important;
+    width: 100%;
+    max-width: none;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  /* Containers permitem overflow */
-  .hero, .card-banner, .full-photo-banner, .product-grid, .testimonial-grid, .about, .steps-list {
-    overflow: visible !important;
+  .button {
+    width: 100%;
   }
 
-  /* Hero Points */
   .hero-points {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 360px !important;
-    margin-top: 18px !important;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: none;
   }
+
   .hero-points div {
-    border-right: 0 !important;
-    border-bottom: 1px solid rgba(45,31,43,0.08) !important;
-    padding-bottom: 10px !important;
+    border-right: 0;
+    border-bottom: 1px solid rgba(45, 31, 43, 0.08);
+    padding: 0 0 10px;
   }
-  .hero-points div:last-child { border-bottom: 0 !important; }
 
-  /* Sobre */
+  .hero-points div:last-child {
+    border-bottom: 0;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .about-card img {
+    border-radius: 18px;
+  }
+
   .about-text {
-    min-height: auto !important;
-    padding: 25px 12px !important;
-    text-align: center !important;
-    max-width: 90% !important;
-    margin: 0 auto !important;
-    background-size: contain !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
+    min-height: 560px;
+    padding: 0 6px;
+    text-align: left;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: min(92%, 420px);
   }
-  .about-text h2 { font-size: 2rem !important; line-height: 1.1 !important; }
-  .about-text p { font-size: 0.95rem !important; margin: 12px auto !important; }
 
-  /* Footer */
+  .about-text h2 {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+
+  .about-text p {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .product-meta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-meta span,
+  .product-meta a {
+    width: 100%;
+    text-align: center;
+  }
+
   .footer-main {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    gap: 12px !important;
-    padding: 20px 10px !important;
+    position: static;
+    width: calc(100% - 28px);
+    margin: -4px auto 0;
+    padding: 18px 0 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: left;
   }
-  .footer-column { width: 100% !important; margin-bottom: 12px !important; }
-  .footer-link { justify-content: center !important; font-size: 0.9rem !important; gap: 6px !important; }
 
-  /* Grids de produtos e depoimentos */
-  .product-grid, .testimonial-grid, .steps-list { grid-template-columns: 1fr !important; }
-
-  /* WhatsApp */
-  .whatsapp-float { right: 12px !important; bottom: 12px !important; width: 52px !important; height: 52px !important; }
-  .whatsapp-icon { width: 52px !important; height: 52px !important; }
+  .footer-link {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 420px) {
-  .nav-links { gap: 6px 8px !important; font-size: 0.72rem !important; color: #f7d9e6 !important; }
-  .hero h1 { font-size: 1.48rem !important; }
-  .hero p { font-size: 0.88rem !important; }
-  .button { min-height: 40px !important; padding-inline: 14px !important; }
-  .section-head h2 { font-size: 1.35rem !important; }
-  .about-text h2 { font-size: 2rem !important; }
-  .footer-main { width: calc(100% - 16px) !important; }
-  .whatsapp-float { right: 10px !important; bottom: 10px !important; width: 48px !important; height: 48px !important; }
-  .whatsapp-icon { width: 48px !important; height: 48px !important; }
+  .nav-links {
+    gap: 6px 9px;
+    font-size: 0.72rem;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .about-text h2 {
+    font-size: 2.2rem;
+  }
 }
