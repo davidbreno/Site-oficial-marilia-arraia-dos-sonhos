@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f8efe8;
   --cream: #fbf3eb;
   --surface: #fff8f1;
@@ -1173,48 +1173,101 @@ main {
 
 }
 
-@media (max-width: 420px) {
+/* =========================
+   MOBILE FIX FINAL – seguro para colar no final do CSS
+   ========================= */
+@media (max-width: 640px) {
+
+  /* ====================
+     HEADER / MENU
+     ==================== */
+  .nav-shell {
+    position: relative !important;
+    top: 16px !important;
+    left: 19px !important;
+    transform: none !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 12px !important;
+    z-index: 100 !important;
+  }
   .nav-links {
-    gap: 6px 8px;
-    font-size: 0.72rem;
-    color: #f7d9e6;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px 10px !important;
+    font-size: 0.85rem !important;
+    margin: 0 auto !important;
+    color: #f7d9e6 !important;
   }
+  .brand-logo { width: 108px !important; height: auto !important; }
+  .nav-actions { display: flex !important; gap: 10px !important; }
 
-  .hero h1 {
-    font-size: 1.48rem;
+  /* ====================
+     HERO / BOTÃO
+     ==================== */
+  .hero {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 14px 10px 20px !important;
+    margin: 0 auto 12px !important;
+    width: calc(100% - 12px) !important;
   }
+  .hero .minha-imagem { display: none !important; }
+  .hero-copy { max-width: 100% !important; padding-top: 0 !important; text-align: center !important; }
+  .hero-actions { flex-direction: column !important; gap: 10px !important; width: 100% !important; max-width: 320px; margin: 0 auto !important; }
+  .button { width: 100% !important; }
 
-  .hero p {
-    font-size: 0.88rem;
+  /* ====================
+     HERO POINTS / ABOUT
+     ==================== */
+  .hero-points { grid-template-columns: 1fr !important; max-width: 100% !important; margin-top: 18px !important; }
+  .hero-points div { border-right: 0 !important; border-bottom: 1px solid rgba(45,31,43,0.08) !important; padding-bottom: 10px !important; }
+  .hero-points div:last-child { border-bottom: 0 !important; }
+
+  .about-text {
+    min-height: auto !important;
+    padding: 25px 12px !important;
+    background-size: contain !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    text-align: center !important;
   }
+  .about-text h2 { font-size: 2rem !important; line-height: 1.1 !important; }
+  .about-text p { font-size: 0.95rem !important; max-width: 90% !important; margin: 12px auto !important; }
 
-  .button {
-    min-height: 40px;
-    padding-inline: 14px;
-  }
-
-  .section-head h2 {
-    font-size: 1.35rem;
-  }
-
-  .about-text h2 {
-    font-size: 2rem;
-  }
-
+  /* ====================
+     FOOTER
+     ==================== */
   .footer-main {
-    width: calc(100% - 16px);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    padding: 20px 10px !important;
   }
+  .footer-column { width: 100% !important; margin-bottom: 12px !important; }
+  .footer-link { justify-content: center !important; font-size: 0.9rem !important; gap: 6px !important; }
 
-  .whatsapp-float {
-    right: 10px;
-    bottom: 10px;
-    width: 48px;
-    height: 48px;
-  }
-
-  .whatsapp-icon {
-    width: 48px;
-    height: 48px;
-  }
+  /* ====================
+     WHATSAPP
+     ==================== */
+  .whatsapp-float { right: 12px !important; bottom: 12px !important; width: 52px !important; height: 52px !important; }
+  .whatsapp-icon { width: 52px !important; height: 52px !important; }
 }
 
+@media (max-width: 420px) {
+  .nav-links { gap: 6px 8px !important; font-size: 0.72rem !important; color: #f7d9e6 !important; }
+  .hero h1 { font-size: 1.48rem !important; }
+  .hero p { font-size: 0.88rem !important; }
+  .button { min-height: 40px !important; padding-inline: 14px !important; }
+  .section-head h2 { font-size: 1.35rem !important; }
+  .about-text h2 { font-size: 2rem !important; }
+  .footer-main { width: calc(100% - 16px) !important; }
+  .whatsapp-float { right: 10px !important; bottom: 10px !important; width: 48px !important; height: 48px !important; }
+  .whatsapp-icon { width: 48px !important; height: 48px !important; }
+}
