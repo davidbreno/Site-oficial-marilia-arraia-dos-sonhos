@@ -734,10 +734,10 @@ main {
 
 .about-text {
   position: relative;
-  padding: 12px 0;
+  padding: 5px 0;
   color: var(--muted);
-  min-height: 700px; /* define altura mínima da div */
-  background: url('img/MAE.png') no-repeat center 55%; /* agora vai subir */
+  min-height: 750px; /* define altura mínima da div */
+  background: url('img/MAE.png') 80%; /* agora vai subir */
   background-size: contain;
 }
 
